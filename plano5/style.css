@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #ffffff;
+  color: #000000;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.logo-container {
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f0f0f0;
+  border-top: 4px solid #000000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error State */
+.error {
+  padding: 20px;
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 8px;
+}
+
+.error-message {
+  color: #c00;
+  font-weight: 500;
+}
+
+/* Payment State */
+.payment h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.amount {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.qrcode-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+}
+
+#qrcode {
+  display: inline-block;
+}
+
+#qrcode canvas {
+  border-radius: 8px;
+}
+
+.pix-code-container {
+  margin-bottom: 30px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.pix-code-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.pix-code {
+  flex: 1;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  word-break: break-all;
+  text-align: left;
+  color: #333;
+}
+
+.copy-btn {
+  padding: 8px 16px;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.copy-btn:hover {
+  background: #333333;
+}
+
+.copy-btn:active {
+  background: #000000;
+}
+
+.status {
+  font-size: 14px;
+  color: #666;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Success State */
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.success-icon svg {
+  width: 40px;
+  height: 40px;
+  color: #ffffff;
+  stroke-width: 3;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.success h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.success p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .logo {
+    width: 150px;
+  }
+
+  .payment h1 {
+    font-size: 24px;
+  }
+
+  .amount {
+    font-size: 28px;
+  }
+
+  .pix-code {
+    font-size: 10px;
+  }
+}
